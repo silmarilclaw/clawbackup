@@ -169,7 +169,7 @@
         "model": {
           "primary": "anthropic/claude-opus-4-6",
           "fallbacks": [
-            "anthropic/claude-sonnet-4-20250514"
+            "anthropic/claude-sonnet-4-6"
           ]
         },
         "heartbeat": {
@@ -198,7 +198,7 @@
         "model": {
           "primary": "ollama/qwen3:235b",
           "fallbacks": [
-            "anthropic/claude-sonnet-4-20250514"
+            "anthropic/claude-sonnet-4-6"
           ]
         },
         "identity": {
@@ -217,7 +217,7 @@
         "model": {
           "primary": "anthropic/claude-opus-4-6",
           "fallbacks": [
-            "anthropic/claude-sonnet-4-20250514"
+            "anthropic/claude-sonnet-4-6"
           ]
         },
         "identity": {
@@ -231,7 +231,7 @@
         "name": "Navi \ud83e\uddda",
         "workspace": "/Users/silclaw/.openclaw/agents/navi/workspace",
         "model": {
-          "primary": "anthropic/claude-sonnet-4-20250514",
+          "primary": "anthropic/claude-sonnet-4-6",
           "fallbacks": [
             "ollama/qwen3:30b"
           ]
