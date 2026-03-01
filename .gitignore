@@ -1,16 +1,21 @@
-# Sensitive credentials - don't backup to GitHub
+# Sensitive
 credentials/
 identity/
 logs/
 canvas/
 sandboxes/
 *.bak
+*.bak.*
 node_modules/
-# Session data (large, regenerated)
+
+# Sessions (large, regenerated)
 sessions/
+
+# Agent workspaces have their own git repos - backed up via workspace-backup/
+agents/*/workspace/
+
+# Old backup format
+shared-backup/
+
 # Temp
 *.tmp
-agents/ganondorf/workspace/
-agents/zelda/workspace/
-agents/main/workspace/
-agents/navi/workspace/
