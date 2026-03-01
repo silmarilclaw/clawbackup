@@ -342,7 +342,7 @@
       "enabled": true,
       "dmPolicy": "pairing",
       "groupPolicy": "allowlist",
-      "streaming": "off",
+      "streaming": "partial",
       "accounts": {
         "default": {
           "dmPolicy": "pairing",
@@ -355,28 +355,28 @@
           "dmPolicy": "pairing",
           "botToken": "8561027943:AAEL-ROkfdM-wwR69qT3QiEL8y216gdY6y4",
           "groupPolicy": "allowlist",
-          "streaming": "off"
+          "streaming": "partial"
         },
         "zelda": {
           "enabled": true,
           "dmPolicy": "pairing",
           "botToken": "8429414946:AAE5dfO43bUUuI4tDcQ3efS_gXwa7fik07g",
           "groupPolicy": "allowlist",
-          "streaming": "off"
+          "streaming": "partial"
         },
         "ganondorf": {
           "enabled": true,
           "dmPolicy": "pairing",
           "botToken": "8631507105:AAFxCxMN1La4ep4RuxyZFVAoMpNgUZWwJG4",
           "groupPolicy": "allowlist",
-          "streaming": "off"
+          "streaming": "partial"
         },
         "navi": {
           "enabled": true,
           "dmPolicy": "pairing",
           "botToken": "8722215117:AAHoh0MuqiYCcBYp4lp89Ig0qVGS67ON4w4",
           "groupPolicy": "allowlist",
-          "streaming": "off"
+          "streaming": "partial"
         }
       }
     }
