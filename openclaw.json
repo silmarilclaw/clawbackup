@@ -21,7 +21,7 @@
   "ui": {
     "assistant": {
       "name": "Link",
-      "avatar": "🗡️"
+      "avatar": "\ud83d\udde1\ufe0f"
     }
   },
   "auth": {
@@ -164,7 +164,7 @@
     "list": [
       {
         "id": "main",
-        "name": "Link 🗡️",
+        "name": "Link \ud83d\udde1\ufe0f",
         "workspace": "/Users/silclaw/.openclaw/agents/main/workspace",
         "model": {
           "primary": "anthropic/claude-opus-4-6",
@@ -178,7 +178,7 @@
         "identity": {
           "name": "Link",
           "theme": "I am Link, the coordination agent. I bridge Manuel with the specialized agents. Direct, resourceful, and efficient.",
-          "emoji": "🗡️"
+          "emoji": "\ud83d\udde1\ufe0f"
         },
         "subagents": {
           "allowAgents": [
@@ -192,7 +192,7 @@
       },
       {
         "id": "zelda",
-        "name": "Zelda 👑",
+        "name": "Zelda \ud83d\udc51",
         "workspace": "/Users/silclaw/.openclaw/agents/zelda/workspace",
         "model": {
           "primary": "ollama/qwen3:235b",
@@ -203,7 +203,7 @@
         "identity": {
           "name": "Zelda",
           "theme": "I am Zelda, the deep thinking agent. I handle complex analysis, reasoning, and research synthesis. Thoughtful and thorough.",
-          "emoji": "👑"
+          "emoji": "\ud83d\udc51"
         },
         "tools": {
           "profile": "full"
@@ -211,7 +211,7 @@
       },
       {
         "id": "ganondorf",
-        "name": "Ganondorf ⚡",
+        "name": "Ganondorf \u26a1",
         "workspace": "/Users/silclaw/.openclaw/agents/ganondorf/workspace",
         "model": {
           "primary": "anthropic/claude-opus-4-6",
@@ -222,15 +222,18 @@
         "identity": {
           "name": "Ganondorf",
           "theme": "I am Ganondorf, the maximum power agent. Deployed for mission-critical tasks that demand the highest capability.",
-          "emoji": "⚡"
+          "emoji": "\u26a1"
         }
       },
       {
         "id": "navi",
-        "name": "Navi 🧚",
+        "name": "Navi \ud83e\uddda",
         "workspace": "/Users/silclaw/.openclaw/agents/navi/workspace",
         "model": {
-          "primary": "anthropic/claude-sonnet-4-20250514"
+          "primary": "anthropic/claude-sonnet-4-20250514",
+          "fallbacks": [
+            "ollama/qwen3:30b"
+          ]
         },
         "heartbeat": {
           "every": "2h"
@@ -238,7 +241,7 @@
         "identity": {
           "name": "Navi",
           "theme": "I am Navi, the fast and reliable fallback agent. Always available, efficient, and ready to help when others are busy.",
-          "emoji": "🧚"
+          "emoji": "\ud83e\uddda"
         }
       }
     ]
