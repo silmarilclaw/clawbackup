@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "profiles": {
+    "anthropic:silclaw": {
+      "type": "token",
+      "provider": "anthropic",
+      "token": "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"
+    }
+  },
+  "lastGood": {
+    "anthropic": "anthropic:silclaw"
+  },
+  "usageStats": {
+    "anthropic:silclaw": {
+      "lastUsed": 1772395082985,
+      "errorCount": 0,
+      "lastFailureAt": 1771202967626
+    }
+  }
+}

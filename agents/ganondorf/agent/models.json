@@ -1,0 +1,115 @@
+{
+  "providers": {
+    "ollama": {
+      "baseUrl": "http://192.168.7.71:11434/v1",
+      "apiKey": "dummy",
+      "auth": "api-key",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "qwen3:30b",
+          "name": "Qwen 3 30B",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 128000,
+          "maxTokens": 8192,
+          "api": "openai-completions"
+        },
+        {
+          "id": "deepseek-r1:8b",
+          "name": "DeepSeek R1 8B",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 64000,
+          "maxTokens": 4096,
+          "api": "openai-completions"
+        },
+        {
+          "id": "qwen3-coder:30b",
+          "name": "Qwen 3 Coder 30B",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 128000,
+          "maxTokens": 8192,
+          "api": "openai-completions"
+        },
+        {
+          "id": "qwen3-vl:32b",
+          "name": "Qwen 3 VL 32B",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 128000,
+          "maxTokens": 8192,
+          "api": "openai-completions"
+        },
+        {
+          "id": "gpt-oss:120b",
+          "name": "GPT-OSS 120B (Thinking)",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 131072,
+          "maxTokens": 16384,
+          "api": "openai-completions"
+        },
+        {
+          "id": "qwen3:235b",
+          "name": "Qwen 3 235B MoE (Thinking)",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 131072,
+          "maxTokens": 16384,
+          "api": "openai-completions"
+        }
+      ]
+    }
+  }
+}

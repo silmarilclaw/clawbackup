@@ -1,0 +1,329 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.2.26",
+    "lastTouchedAt": "2026-03-01T19:41:11.840Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-02-13T18:39:03.298Z",
+    "lastRunVersion": "2026.2.12",
+    "lastRunCommand": "doctor",
+    "lastRunMode": "local"
+  },
+  "ui": {
+    "assistant": {
+      "name": "Link",
+      "avatar": "🗡️"
+    }
+  },
+  "auth": {
+    "profiles": {
+      "anthropic:silclaw": {
+        "provider": "anthropic",
+        "mode": "token"
+      }
+    }
+  },
+  "models": {
+    "providers": {
+      "ollama": {
+        "baseUrl": "http://192.168.7.71:11434/v1",
+        "apiKey": "dummy",
+        "auth": "api-key",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "qwen3:30b",
+            "name": "Qwen 3 30B",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "deepseek-r1:8b",
+            "name": "DeepSeek R1 8B",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 64000,
+            "maxTokens": 4096
+          },
+          {
+            "id": "qwen3-coder:30b",
+            "name": "Qwen 3 Coder 30B",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "qwen3-vl:32b",
+            "name": "Qwen 3 VL 32B",
+            "reasoning": false,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 8192
+          },
+          {
+            "id": "gpt-oss:120b",
+            "name": "GPT-OSS 120B (Thinking)",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 16384
+          },
+          {
+            "id": "qwen3:235b",
+            "name": "Qwen 3 235B MoE (Thinking)",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 16384
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "anthropic/claude-opus-4-6"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      },
+      "sandbox": {
+        "mode": "all"
+      }
+    },
+    "list": [
+      {
+        "id": "main",
+        "name": "Link 🗡️",
+        "workspace": "/Users/silclaw/.openclaw/agents/main/workspace",
+        "model": {
+          "primary": "anthropic/claude-opus-4-6"
+        },
+        "heartbeat": {
+          "every": "2h"
+        },
+        "identity": {
+          "name": "Link",
+          "theme": "I am Link, the coordination agent. I bridge Manuel with the specialized agents. Direct, resourceful, and efficient.",
+          "emoji": "🗡️"
+        },
+        "sandbox": {
+          "mode": "off"
+        }
+      },
+      {
+        "id": "zelda",
+        "name": "Zelda 👑",
+        "workspace": "/Users/silclaw/.openclaw/agents/zelda/workspace",
+        "model": {
+          "primary": "ollama/qwen3:235b"
+        },
+        "identity": {
+          "name": "Zelda",
+          "theme": "I am Zelda, the deep thinking agent. I handle complex analysis, reasoning, and research synthesis. Thoughtful and thorough.",
+          "emoji": "👑"
+        }
+      },
+      {
+        "id": "ganondorf",
+        "name": "Ganondorf ⚡",
+        "workspace": "/Users/silclaw/.openclaw/agents/ganondorf/workspace",
+        "model": {
+          "primary": "anthropic/claude-opus-4-6"
+        },
+        "identity": {
+          "name": "Ganondorf",
+          "theme": "I am Ganondorf, the maximum power agent. Deployed for mission-critical tasks that demand the highest capability.",
+          "emoji": "⚡"
+        }
+      }
+    ]
+  },
+  "tools": {
+    "media": {
+      "audio": {
+        "enabled": true,
+        "maxBytes": 26214400,
+        "prompt": "Transcribe this audio message accurately.",
+        "timeoutSeconds": 30
+      }
+    }
+  },
+  "bindings": [
+    {
+      "agentId": "zelda",
+      "match": {
+        "channel": "telegram",
+        "accountId": "zelda"
+      }
+    }
+  ],
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "boot-md": {
+          "enabled": true
+        },
+        "command-logger": {
+          "enabled": true
+        },
+        "session-memory": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "channels": {
+    "whatsapp": {
+      "enabled": true,
+      "dmPolicy": "allowlist",
+      "allowFrom": [
+        "+34635417414"
+      ],
+      "groupAllowFrom": [
+        "+34635417414"
+      ],
+      "groupPolicy": "allowlist",
+      "debounceMs": 0,
+      "mediaMaxMb": 50
+    },
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "groupPolicy": "allowlist",
+      "streaming": "off",
+      "accounts": {
+        "default": {
+          "dmPolicy": "pairing",
+          "botToken": "8000296999:AAHeMNq-_74unNb5PBdQgXGF871lpbTk1ss",
+          "groupPolicy": "allowlist",
+          "streaming": "partial"
+        },
+        "link": {
+          "enabled": true,
+          "dmPolicy": "pairing",
+          "botToken": "8561027943:AAEL-ROkfdM-wwR69qT3QiEL8y216gdY6y4",
+          "groupPolicy": "allowlist",
+          "streaming": "off"
+        },
+        "zelda": {
+          "enabled": true,
+          "dmPolicy": "pairing",
+          "botToken": "8429414946:AAE5dfO43bUUuI4tDcQ3efS_gXwa7fik07g",
+          "groupPolicy": "allowlist",
+          "streaming": "off"
+        },
+        "ganondorf": {
+          "enabled": true,
+          "dmPolicy": "pairing",
+          "botToken": "8631507105:AAFxCxMN1La4ep4RuxyZFVAoMpNgUZWwJG4",
+          "groupPolicy": "allowlist",
+          "streaming": "off"
+        }
+      }
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "a5a7c132699a941ec7edbb68670bdea95333a47d20782c53",
+      "allowTailscale": true
+    },
+    "tailscale": {
+      "mode": "serve",
+      "resetOnExit": true
+    },
+    "nodes": {
+      "denyCommands": [
+        "camera.snap",
+        "camera.clip",
+        "screen.record",
+        "calendar.add",
+        "contacts.add",
+        "reminders.add"
+      ]
+    }
+  },
+  "skills": {
+    "install": {
+      "nodeManager": "pnpm"
+    }
+  },
+  "plugins": {
+    "entries": {
+      "telegram": {
+        "enabled": true
+      }
+    }
+  }
+}

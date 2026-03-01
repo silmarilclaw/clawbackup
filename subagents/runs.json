@@ -1,0 +1,77 @@
+{
+  "version": 2,
+  "runs": {
+    "37ebc530-89d0-48e8-8378-6cd1e61355ed": {
+      "runId": "37ebc530-89d0-48e8-8378-6cd1e61355ed",
+      "childSessionKey": "agent:zelda:subagent:07381a60-ef1a-412e-abef-c080df0a48b1",
+      "requesterSessionKey": "agent:main:telegram:direct:1374261148",
+      "requesterOrigin": {
+        "channel": "telegram",
+        "to": "telegram:1374261148",
+        "accountId": "default"
+      },
+      "requesterDisplayKey": "agent:main:telegram:direct:1374261148",
+      "task": "Say hi to Manuel on Telegram. Be yourself, keep it brief and warm.",
+      "cleanup": "keep",
+      "expectsCompletionMessage": true,
+      "spawnMode": "run",
+      "model": "ollama/qwen3:235b",
+      "runTimeoutSeconds": 0,
+      "createdAt": 1772394567948,
+      "startedAt": 1772394568359,
+      "archiveAtMs": 1772398167948,
+      "cleanupHandled": true,
+      "cleanupCompletedAt": 1772394763687,
+      "endedAt": 1772394763687,
+      "outcome": {
+        "status": "error",
+        "error": "killed"
+      },
+      "endedReason": "subagent-killed",
+      "suppressAnnounceReason": "killed",
+      "endedHookEmittedAt": 1772394763687
+    },
+    "52a7d349-a48d-4415-b802-17d1e08fd6c3": {
+      "runId": "52a7d349-a48d-4415-b802-17d1e08fd6c3",
+      "childSessionKey": "agent:ganondorf:subagent:1d238a70-b40a-42b5-9599-781c03858b60",
+      "requesterSessionKey": "agent:main:telegram:direct:1374261148",
+      "requesterOrigin": {
+        "channel": "telegram",
+        "to": "telegram:1374261148",
+        "accountId": "default"
+      },
+      "requesterDisplayKey": "agent:main:telegram:direct:1374261148",
+      "task": "Say hi to Manuel on Telegram. Be yourself, keep it brief.",
+      "cleanup": "keep",
+      "expectsCompletionMessage": true,
+      "spawnMode": "run",
+      "model": "anthropic/claude-opus-4-6",
+      "runTimeoutSeconds": 0,
+      "createdAt": 1772394567968,
+      "startedAt": 1772394568342,
+      "archiveAtMs": 1772398167968,
+      "cleanupHandled": false
+    },
+    "4296aee0-e98c-4a7e-9c18-45d0ad36c95e": {
+      "runId": "4296aee0-e98c-4a7e-9c18-45d0ad36c95e",
+      "childSessionKey": "agent:zelda:subagent:5090c603-dfb2-4566-9bde-535e13e0a323",
+      "requesterSessionKey": "agent:main:telegram:direct:1374261148",
+      "requesterOrigin": {
+        "channel": "telegram",
+        "to": "telegram:1374261148",
+        "accountId": "default"
+      },
+      "requesterDisplayKey": "agent:main:telegram:direct:1374261148",
+      "task": "Say hi to Manuel on Telegram. Be yourself, keep it brief and warm.",
+      "cleanup": "keep",
+      "expectsCompletionMessage": true,
+      "spawnMode": "run",
+      "model": "ollama/qwen3:235b",
+      "runTimeoutSeconds": 0,
+      "createdAt": 1772394767652,
+      "startedAt": 1772394767782,
+      "archiveAtMs": 1772398367652,
+      "cleanupHandled": false
+    }
+  }
+}

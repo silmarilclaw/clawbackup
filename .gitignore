@@ -1,0 +1,15 @@
+# Sensitive credentials - don't backup to GitHub
+credentials/
+identity/
+logs/
+canvas/
+sandboxes/
+*.bak
+node_modules/
+# Session data (large, regenerated)
+sessions/
+# Temp
+*.tmp
+agents/ganondorf/workspace/
+agents/zelda/workspace/
+agents/main/workspace/
