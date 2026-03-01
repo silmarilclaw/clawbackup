@@ -1,0 +1,40 @@
+# Sessions (large, regenerated)
+sessions/
+agents/*/sessions/
+
+# Logs & temp
+logs/
+*.sock
+*.log
+update-check.json
+
+# Backups of config (we have the main one)
+openclaw.json.bak*
+
+# Canvas/media cache
+canvas/
+media/
+
+# Completions (regenerated)
+completions/
+
+# Cron state (regenerated)
+cron/
+
+# Device pairing state (regenerated)
+devices/
+
+# Subagent run state
+subagents/
+
+# Old workspace dirs (duplicates of agents/main/workspace)
+workspace/
+workspace-main/
+workspace-ganondorf/
+workspace-thinking/
+
+# Git dirs inside workspaces
+agents/*/workspace/.git/
+
+# Telegram session files
+telegram/
