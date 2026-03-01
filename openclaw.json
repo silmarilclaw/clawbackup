@@ -183,7 +183,8 @@
         "subagents": {
           "allowAgents": [
             "zelda",
-            "ganondorf"
+            "ganondorf",
+            "navi"
           ]
         },
         "sandbox": {
