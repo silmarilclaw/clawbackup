@@ -12,15 +12,23 @@
       "containerName": "openclaw-sbx-agent-ganondorf-fc39afec",
       "sessionKey": "agent:ganondorf",
       "createdAtMs": 1772394568164,
-      "lastUsedAtMs": 1772395075082,
+      "lastUsedAtMs": 1772398562617,
       "image": "openclaw-sandbox:bookworm-slim",
       "configHash": "9efaf4880a112b54fcbf774844b81122747aec011e53d053a4f30678b3b7cd0d"
+    },
+    {
+      "containerName": "openclaw-sbx-agent-navi-a8948841",
+      "sessionKey": "agent:navi",
+      "createdAtMs": 1772406525509,
+      "lastUsedAtMs": 1772406549915,
+      "image": "openclaw-sandbox:bookworm-slim",
+      "configHash": "9ba87b56369a6b375a6bfac07728cbe87976b235aebbece780cece1931310d87"
     },
     {
       "containerName": "openclaw-sbx-agent-zelda-fadd51d6",
       "sessionKey": "agent:zelda",
       "createdAtMs": 1772394568165,
-      "lastUsedAtMs": 1772395284636,
+      "lastUsedAtMs": 1772406569303,
       "image": "openclaw-sandbox:bookworm-slim",
       "configHash": "cec7138d4a8ba7af1b4a52215279ab837b2baa1486d4186ec3670fd760b6edca"
     }

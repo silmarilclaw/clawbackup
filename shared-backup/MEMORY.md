@@ -25,3 +25,4 @@
 - Sandboxing Link breaks memory writes (read-only filesystem) — keep sandbox off for trusted models
 - Don't restart the gateway from inside the gateway — it kills your own session
 - Don't enable sandbox.mode=all without Docker installed first
+- **NEVER change config without pushing a backup to GitHub first** — always backup before modifying openclaw.json or agent configs

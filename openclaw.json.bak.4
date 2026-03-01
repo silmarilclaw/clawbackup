@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.2.26",
-    "lastTouchedAt": "2026-03-01T19:29:23.521Z"
+    "lastTouchedAt": "2026-03-01T22:28:15.206Z"
   },
   "wizard": {
     "lastRunAt": "2026-02-13T18:39:03.298Z",
@@ -9,10 +9,19 @@
     "lastRunCommand": "doctor",
     "lastRunMode": "local"
   },
+  "update": {
+    "checkOnStart": true,
+    "auto": {
+      "enabled": true
+    }
+  },
+  "browser": {
+    "enabled": true
+  },
   "ui": {
     "assistant": {
       "name": "Link",
-      "avatar": "\ud83d\udde1\ufe0f"
+      "avatar": "🗡️"
     }
   },
   "auth": {
@@ -137,6 +146,13 @@
       "model": {
         "primary": "anthropic/claude-opus-4-6"
       },
+      "models": {
+        "ollama/qwen3:235b": {
+          "params": {
+            "thinking": "off"
+          }
+        }
+      },
       "maxConcurrent": 4,
       "subagents": {
         "maxConcurrent": 8
@@ -148,7 +164,7 @@
     "list": [
       {
         "id": "main",
-        "name": "Link \ud83d\udde1\ufe0f",
+        "name": "Link 🗡️",
         "workspace": "/Users/silclaw/.openclaw/agents/main/workspace",
         "model": {
           "primary": "anthropic/claude-opus-4-6"
@@ -159,7 +175,13 @@
         "identity": {
           "name": "Link",
           "theme": "I am Link, the coordination agent. I bridge Manuel with the specialized agents. Direct, resourceful, and efficient.",
-          "emoji": "\ud83d\udde1\ufe0f"
+          "emoji": "🗡️"
+        },
+        "subagents": {
+          "allowAgents": [
+            "zelda",
+            "ganondorf"
+          ]
         },
         "sandbox": {
           "mode": "off"
@@ -167,7 +189,7 @@
       },
       {
         "id": "zelda",
-        "name": "Zelda \ud83d\udc51",
+        "name": "Zelda 👑",
         "workspace": "/Users/silclaw/.openclaw/agents/zelda/workspace",
         "model": {
           "primary": "ollama/qwen3:235b"
@@ -175,12 +197,15 @@
         "identity": {
           "name": "Zelda",
           "theme": "I am Zelda, the deep thinking agent. I handle complex analysis, reasoning, and research synthesis. Thoughtful and thorough.",
-          "emoji": "\ud83d\udc51"
+          "emoji": "👑"
+        },
+        "tools": {
+          "profile": "full"
         }
       },
       {
         "id": "ganondorf",
-        "name": "Ganondorf \u26a1",
+        "name": "Ganondorf ⚡",
         "workspace": "/Users/silclaw/.openclaw/agents/ganondorf/workspace",
         "model": {
           "primary": "anthropic/claude-opus-4-6"
@@ -188,7 +213,7 @@
         "identity": {
           "name": "Ganondorf",
           "theme": "I am Ganondorf, the maximum power agent. Deployed for mission-critical tasks that demand the highest capability.",
-          "emoji": "\u26a1"
+          "emoji": "⚡"
         }
       }
     ]
@@ -210,8 +235,25 @@
         "channel": "telegram",
         "accountId": "zelda"
       }
+    },
+    {
+      "agentId": "main",
+      "match": {
+        "channel": "telegram",
+        "accountId": "link"
+      }
+    },
+    {
+      "agentId": "ganondorf",
+      "match": {
+        "channel": "telegram",
+        "accountId": "ganondorf"
+      }
     }
   ],
+  "media": {
+    "preserveFilenames": true
+  },
   "messages": {
     "ackReactionScope": "group-mentions"
   },
@@ -241,34 +283,71 @@
     }
   },
   "channels": {
-    "telegram": {
-      "enabled": true,
-      "dmPolicy": "pairing",
-      "botToken": "8000296999:AAHeMNq-_74unNb5PBdQgXGF871lpbTk1ss",
-      "groupPolicy": "allowlist",
-      "streaming": "partial"
-    },
     "whatsapp": {
       "enabled": true,
       "dmPolicy": "allowlist",
       "allowFrom": [
         "+34635417414"
       ],
-      "groupPolicy": "allowlist",
       "groupAllowFrom": [
         "+34635417414"
-      ]
+      ],
+      "groupPolicy": "allowlist",
+      "debounceMs": 0,
+      "mediaMaxMb": 50
+    },
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "groupPolicy": "allowlist",
+      "streaming": "off",
+      "accounts": {
+        "default": {
+          "dmPolicy": "pairing",
+          "botToken": "8000296999:AAHeMNq-_74unNb5PBdQgXGF871lpbTk1ss",
+          "groupPolicy": "allowlist",
+          "streaming": "partial"
+        },
+        "link": {
+          "enabled": true,
+          "dmPolicy": "pairing",
+          "botToken": "8561027943:AAEL-ROkfdM-wwR69qT3QiEL8y216gdY6y4",
+          "groupPolicy": "allowlist",
+          "streaming": "off"
+        },
+        "zelda": {
+          "enabled": true,
+          "dmPolicy": "pairing",
+          "botToken": "8429414946:AAE5dfO43bUUuI4tDcQ3efS_gXwa7fik07g",
+          "groupPolicy": "allowlist",
+          "streaming": "off"
+        },
+        "ganondorf": {
+          "enabled": true,
+          "dmPolicy": "pairing",
+          "botToken": "8631507105:AAFxCxMN1La4ep4RuxyZFVAoMpNgUZWwJG4",
+          "groupPolicy": "allowlist",
+          "streaming": "off"
+        }
+      }
     }
   },
   "gateway": {
     "port": 18789,
     "mode": "local",
     "bind": "loopback",
+    "controlUi": {
+      "enabled": true,
+      "allowedOrigins": [
+        "https://mac-mini-de-silclaw.tailf02807.ts.net"
+      ]
+    },
     "auth": {
       "mode": "token",
       "token": "a5a7c132699a941ec7edbb68670bdea95333a47d20782c53",
-      "allowTailscale": true
+      "allowTailscale": false
     },
+    "channelHealthCheckMinutes": 10,
     "tailscale": {
       "mode": "serve",
       "resetOnExit": true
@@ -290,6 +369,7 @@
     }
   },
   "plugins": {
+    "enabled": true,
     "entries": {
       "telegram": {
         "enabled": true

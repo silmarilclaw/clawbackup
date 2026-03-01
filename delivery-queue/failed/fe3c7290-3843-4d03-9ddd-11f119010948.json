@@ -1,6 +1,6 @@
 {
-  "id": "2e1f8288-db1c-4fcb-bc16-90e834a74f1a",
-  "enqueuedAt": 1772393590010,
+  "id": "fe3c7290-3843-4d03-9ddd-11f119010948",
+  "enqueuedAt": 1772393529575,
   "channel": "whatsapp",
   "to": "+34635417414",
   "payloads": [
@@ -15,7 +15,7 @@
     "agentId": "main",
     "text": "Hey Manuel 👋 Link here. WhatsApp is up and running! 🗡️"
   },
-  "retryCount": 3,
-  "lastAttemptAt": 1772394154710,
+  "retryCount": 5,
+  "lastAttemptAt": 1772403024711,
   "lastError": "No active WhatsApp Web listener (account: default). Start the gateway, then link WhatsApp with: openclaw channels login --channel whatsapp --account default."
 }

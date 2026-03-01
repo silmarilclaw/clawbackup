@@ -1,13 +1,22 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.2.26",
-    "lastTouchedAt": "2026-03-01T19:41:21.847Z"
+    "lastTouchedAt": "2026-03-01T23:13:55.118Z"
   },
   "wizard": {
-    "lastRunAt": "2026-02-13T18:39:03.298Z",
-    "lastRunVersion": "2026.2.12",
+    "lastRunAt": "2026-03-01T23:13:55.079Z",
+    "lastRunVersion": "2026.2.26",
     "lastRunCommand": "doctor",
     "lastRunMode": "local"
+  },
+  "update": {
+    "checkOnStart": true,
+    "auto": {
+      "enabled": true
+    }
+  },
+  "browser": {
+    "enabled": true
   },
   "ui": {
     "assistant": {
@@ -137,19 +146,19 @@
       "model": {
         "primary": "anthropic/claude-opus-4-6"
       },
-      "maxConcurrent": 4,
-      "subagents": {
-        "maxConcurrent": 8
-      },
-      "sandbox": {
-        "mode": "all"
-      },
       "models": {
         "ollama/qwen3:235b": {
           "params": {
             "thinking": "off"
           }
         }
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      },
+      "sandbox": {
+        "mode": "all"
       }
     },
     "list": [
@@ -158,7 +167,10 @@
         "name": "Link 🗡️",
         "workspace": "/Users/silclaw/.openclaw/agents/main/workspace",
         "model": {
-          "primary": "anthropic/claude-opus-4-6"
+          "primary": "anthropic/claude-opus-4-6",
+          "fallbacks": [
+            "anthropic/claude-sonnet-4-20250514"
+          ]
         },
         "heartbeat": {
           "every": "2h"
@@ -168,14 +180,14 @@
           "theme": "I am Link, the coordination agent. I bridge Manuel with the specialized agents. Direct, resourceful, and efficient.",
           "emoji": "🗡️"
         },
-        "sandbox": {
-          "mode": "off"
-        },
         "subagents": {
           "allowAgents": [
             "zelda",
             "ganondorf"
           ]
+        },
+        "sandbox": {
+          "mode": "off"
         }
       },
       {
@@ -183,12 +195,18 @@
         "name": "Zelda 👑",
         "workspace": "/Users/silclaw/.openclaw/agents/zelda/workspace",
         "model": {
-          "primary": "ollama/qwen3:235b"
+          "primary": "ollama/qwen3:235b",
+          "fallbacks": [
+            "anthropic/claude-sonnet-4-20250514"
+          ]
         },
         "identity": {
           "name": "Zelda",
           "theme": "I am Zelda, the deep thinking agent. I handle complex analysis, reasoning, and research synthesis. Thoughtful and thorough.",
           "emoji": "👑"
+        },
+        "tools": {
+          "profile": "full"
         }
       },
       {
@@ -196,12 +214,31 @@
         "name": "Ganondorf ⚡",
         "workspace": "/Users/silclaw/.openclaw/agents/ganondorf/workspace",
         "model": {
-          "primary": "anthropic/claude-opus-4-6"
+          "primary": "anthropic/claude-opus-4-6",
+          "fallbacks": [
+            "anthropic/claude-sonnet-4-20250514"
+          ]
         },
         "identity": {
           "name": "Ganondorf",
           "theme": "I am Ganondorf, the maximum power agent. Deployed for mission-critical tasks that demand the highest capability.",
           "emoji": "⚡"
+        }
+      },
+      {
+        "id": "navi",
+        "name": "Navi 🧚",
+        "workspace": "/Users/silclaw/.openclaw/agents/navi/workspace",
+        "model": {
+          "primary": "anthropic/claude-sonnet-4-20250514"
+        },
+        "heartbeat": {
+          "every": "2h"
+        },
+        "identity": {
+          "name": "Navi",
+          "theme": "I am Navi, the fast and reliable fallback agent. Always available, efficient, and ready to help when others are busy.",
+          "emoji": "🧚"
         }
       }
     ]
@@ -237,8 +274,18 @@
         "channel": "telegram",
         "accountId": "ganondorf"
       }
+    },
+    {
+      "agentId": "navi",
+      "match": {
+        "channel": "telegram",
+        "accountId": "navi"
+      }
     }
   ],
+  "media": {
+    "preserveFilenames": true
+  },
   "messages": {
     "ackReactionScope": "group-mentions"
   },
@@ -313,6 +360,13 @@
           "botToken": "8631507105:AAFxCxMN1La4ep4RuxyZFVAoMpNgUZWwJG4",
           "groupPolicy": "allowlist",
           "streaming": "off"
+        },
+        "navi": {
+          "enabled": true,
+          "dmPolicy": "pairing",
+          "botToken": "8722215117:AAHoh0MuqiYCcBYp4lp89Ig0qVGS67ON4w4",
+          "groupPolicy": "allowlist",
+          "streaming": "off"
         }
       }
     }
@@ -321,11 +375,18 @@
     "port": 18789,
     "mode": "local",
     "bind": "loopback",
+    "controlUi": {
+      "enabled": true,
+      "allowedOrigins": [
+        "https://mac-mini-de-silclaw.tailf02807.ts.net"
+      ]
+    },
     "auth": {
       "mode": "token",
       "token": "a5a7c132699a941ec7edbb68670bdea95333a47d20782c53",
-      "allowTailscale": true
+      "allowTailscale": false
     },
+    "channelHealthCheckMinutes": 10,
     "tailscale": {
       "mode": "serve",
       "resetOnExit": true
@@ -347,6 +408,7 @@
     }
   },
   "plugins": {
+    "enabled": true,
     "entries": {
       "telegram": {
         "enabled": true
