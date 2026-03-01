@@ -50,7 +50,16 @@
       "createdAt": 1772394567968,
       "startedAt": 1772394568342,
       "archiveAtMs": 1772398167968,
-      "cleanupHandled": false
+      "cleanupHandled": true,
+      "cleanupCompletedAt": 1772395294454,
+      "endedAt": 1772395294454,
+      "outcome": {
+        "status": "error",
+        "error": "killed"
+      },
+      "endedReason": "subagent-killed",
+      "suppressAnnounceReason": "killed",
+      "endedHookEmittedAt": 1772395294454
     },
     "4296aee0-e98c-4a7e-9c18-45d0ad36c95e": {
       "runId": "4296aee0-e98c-4a7e-9c18-45d0ad36c95e",
@@ -69,9 +78,44 @@
       "model": "ollama/qwen3:235b",
       "runTimeoutSeconds": 0,
       "createdAt": 1772394767652,
-      "startedAt": 1772394767782,
+      "startedAt": 1772394767689,
       "archiveAtMs": 1772398367652,
-      "cleanupHandled": false
+      "cleanupHandled": true,
+      "endedAt": 1772395294432,
+      "outcome": {
+        "status": "timeout"
+      },
+      "endedReason": "subagent-complete",
+      "endedHookEmittedAt": 1772395310282,
+      "cleanupCompletedAt": 1772395310283
+    },
+    "45531b11-a6c1-47ad-a028-58f835932626": {
+      "runId": "45531b11-a6c1-47ad-a028-58f835932626",
+      "childSessionKey": "agent:zelda:subagent:9d8e2449-f399-493e-a77c-090a06c6d884",
+      "requesterSessionKey": "agent:main:telegram:direct:1374261148",
+      "requesterOrigin": {
+        "channel": "telegram",
+        "to": "telegram:1374261148",
+        "accountId": "link"
+      },
+      "requesterDisplayKey": "agent:main:telegram:direct:1374261148",
+      "task": "Reply with just \"hello\" to confirm you're working.",
+      "cleanup": "keep",
+      "expectsCompletionMessage": true,
+      "spawnMode": "run",
+      "model": "ollama/qwen3:235b",
+      "runTimeoutSeconds": 0,
+      "createdAt": 1772395244152,
+      "startedAt": 1772395244192,
+      "archiveAtMs": 1772398844152,
+      "cleanupHandled": true,
+      "endedAt": 1772395294406,
+      "outcome": {
+        "status": "timeout"
+      },
+      "endedReason": "subagent-complete",
+      "endedHookEmittedAt": 1772395310141,
+      "cleanupCompletedAt": 1772395310141
     }
   }
 }
