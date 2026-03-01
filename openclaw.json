@@ -284,6 +284,13 @@
         "channel": "telegram",
         "accountId": "navi"
       }
+    },
+    {
+      "agentId": "main",
+      "match": {
+        "channel": "telegram",
+        "accountId": "default"
+      }
     }
   ],
   "media": {
